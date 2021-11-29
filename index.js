@@ -74,7 +74,7 @@ app.get('/company/job',async(req,res)=>{
  })
  app.get('/company/opening',async(req,res)=>{
     const com=await Company.find().sort({openings:-1}).lean().exec();
-    return res.send(com)
+    return res.send(com[0])
  })
 
 //city crud
